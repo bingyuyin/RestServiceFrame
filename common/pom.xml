@@ -8,6 +8,6 @@
 
 	<modules>
 		<module>parent-of-parents</module>
-		<module>maven-dependency-stack</module>
+		<module>maven-dependency-stacks</module>
 	</modules>
 </project>
