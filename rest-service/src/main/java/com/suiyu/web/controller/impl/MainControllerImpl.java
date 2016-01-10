@@ -1,6 +1,6 @@
-package com.suiyu.web.rest.controller.impl;
+package com.suiyu.web.controller.impl;
 
-import com.suiyu.web.rest.controller.MainController;
+import com.suiyu.web.controller.MainController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 @RequestMapping("/")
-public class MainControllerImpl implements MainController{
+public class MainControllerImpl implements MainController {
     @Override
     @RequestMapping
     @ResponseBody

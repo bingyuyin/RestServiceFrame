@@ -1,4 +1,4 @@
-package com.suiyu.web.rest.controller;
+package com.suiyu.web.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
