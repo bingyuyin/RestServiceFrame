@@ -4,7 +4,7 @@
 
 	<display-name>Spring Web MVC Application - Rest Service</display-name>
 
-	<!-- SPRING MVC -->
+	<!-- SPRING MVC Servlet -->
 	<servlet>
 		<servlet-name>mvc-dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -15,4 +15,27 @@
 		<servlet-name>mvc-dispatcher</servlet-name>
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
+
+	<!-- Atmosphere Servlet -->
+	<servlet>
+		<servlet-name>AtmosphereServlet</servlet-name>
+		<servlet-class>org.atmosphere.cpr.MeteorServlet</servlet-class>
+		<!-- If you want to use Servlet 3.0 -->
+		<async-supported>true</async-supported>
+		<!-- List of init-param -->
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AtmosphereServlet</servlet-name>
+		<!-- Any mapping -->
+		<url-pattern>/ws/*</url-pattern>
+	</servlet-mapping>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath:applicationContext.xml
+		</param-value>
+	</context-param>
+
 </web-app>

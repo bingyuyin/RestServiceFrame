@@ -71,7 +71,7 @@
 			<version>${jstl.version}</version>
 		</dependency>
 
-
+		<!-- Atmosphere Framework -->
 		<dependency>
 			<groupId>org.atmosphere</groupId>
 			<artifactId>atmosphere-jersey</artifactId>
@@ -87,6 +87,12 @@
 			<groupId>org.atmosphere</groupId>
 			<artifactId>atmosphere-runtime</artifactId>
 			<version>${atmosphere-runtime}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.atmosphere</groupId>
+			<artifactId>atmosphere-spring</artifactId>
+			<version>${atmosphere.version}</version>
 		</dependency>
 
 		<!-- Jackson -->
