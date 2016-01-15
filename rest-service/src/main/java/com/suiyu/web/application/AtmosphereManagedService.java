@@ -6,7 +6,7 @@ import org.atmosphere.cpr.AtmosphereResource;
 /**
  * Created by yinbing on 1/13/2016.
  */
-@ManagedService(path = "/*")
+@ManagedService(path = "/test")
 public class AtmosphereManagedService {
 
     @Get

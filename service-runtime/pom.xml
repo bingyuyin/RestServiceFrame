@@ -6,5 +6,109 @@
 	<name>Service Runtime</name>
 	<packaging>jar</packaging>
 
+	<parent>
+		<groupId>com.suiyu.lab</groupId>
+		<artifactId>parent-of-parents</artifactId>
+		<version>1.00.00-SNAPSHOT</version>
+		<relativePath>../common/parent-of-parents</relativePath>
+	</parent>
+
+
+
+	<properties>
+		<!-- project.root>..</project.root -->
+		<project.root>${project.basedir}</project.root>
+		<!-- absolute runtime paths -->
+		<runtime.home>${project.root}/target/${project.artifactId}-${project.version}/service-frame</runtime.home>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-distribution</artifactId>
+			<version>${jetty.version}</version>
+			<type>tar.gz</type>
+			<exclusions>
+				<exclusion>
+					<artifactId>test-jetty-webapp</artifactId>
+					<groupId>org.eclipse.jetty</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>test-proxy-webapp</artifactId>
+					<groupId>org.eclipse.jetty</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-dependency-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>unpack-components</id>
+								<phase>post-integration-test</phase>
+								<goals>
+									<goal>unpack</goal>
+								</goals>
+								<configuration>
+									<artifactItems>
+										<artifactItem>
+											<groupId>com.suiyu.lab</groupId>
+											<artifactId>service-packager</artifactId>
+											<version>${project.version}</version>
+											<type>zip</type>
+											<overWrite>true</overWrite>
+											<outputDirectory>${runtime.home}</outputDirectory>
+										</artifactItem>
+									</artifactItems>
+								</configuration>
+							</execution>
+
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+					<id>runtime-construct</id>
+					<!-- Construct the Runtime Tree -->
+					<phase>prepare-package</phase>
+					<goals>
+						<goal>single</goal>
+					</goals>
+					<configuration>
+						<descriptors>
+							<descriptor>src/main/assembly/jetty-assembly.xml</descriptor>
+							<descriptor>src/main/assembly/runtime-assembly.xml</descriptor>
+						</descriptors>
+						<appendAssemblyId>false</appendAssemblyId>
+					</configuration>
+					</execution>
+				</executions>
+
+			</plugin>
+		</plugins>
+	</build>
+
+
+
 	
 </project>

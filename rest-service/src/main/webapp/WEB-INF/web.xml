@@ -18,16 +18,25 @@
 
 	<!-- Atmosphere Servlet -->
 	<servlet>
-		<servlet-name>AtmosphereServlet</servlet-name>
+		<servlet-name>atmosphere-servlet</servlet-name>
 		<servlet-class>org.atmosphere.cpr.MeteorServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
 		<!-- If you want to use Servlet 3.0 -->
 		<async-supported>true</async-supported>
 		<!-- List of init-param -->
+		<init-param>
+			<param-name>org.atmosphere.cpr.AtmosphereInterceptor</param-name>
+			<param-value>org.atmosphere.interceptor.HeartbeatInterceptor</param-value>
+		</init-param>
+		<init-param>
+			<param-name>org.atmosphere.interceptor.HeartbeatInterceptor.heartbeatFrequencyInSeconds</param-name>
+			<param-value>60</param-value>
+		</init-param>
+
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>AtmosphereServlet</servlet-name>
-		<!-- Any mapping -->
+		<servlet-name>atmosphere-servlet</servlet-name>
 		<url-pattern>/ws/*</url-pattern>
 	</servlet-mapping>
 
