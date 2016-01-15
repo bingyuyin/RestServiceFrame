@@ -21,6 +21,8 @@
 		<jackson.version>2.4.4</jackson.version>
 		<!--  -->
 		<console.relative.home>service-frame</console.relative.home>
+		<jetty.relative.home>jetty</jetty.relative.home>
+		<relative.warlocation>${jetty.relative.home}/webapps</relative.warlocation>
 
 		<jetty.version>9.2.10.v20150310</jetty.version>
 	</properties>

@@ -35,7 +35,7 @@
 						<configuration>
 							<overWriteSnapshots>true</overWriteSnapshots>
 							<overWriteReleases>true</overWriteReleases>
-							<outputDirectory>${frame.home}</outputDirectory>
+							<outputDirectory>${frame.home}/jetty/webapps/</outputDirectory>
 							<includeArtifactIds>rest-service</includeArtifactIds>
 							<type>war</type>
 						</configuration>
