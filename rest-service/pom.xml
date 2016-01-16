@@ -34,5 +34,10 @@
 			<type>pom</type>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<finalName>rest-service</finalName>
+	</build>
+
 	
 </project>

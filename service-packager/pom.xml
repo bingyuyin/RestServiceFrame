@@ -27,7 +27,7 @@
 				<artifactId>maven-dependency-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>unpack-service</id>
+						<id>unpack-rest-service</id>
 						<phase>prepare-package</phase>
 						<goals>
 							<goal>unpack-dependencies</goal>
@@ -35,7 +35,7 @@
 						<configuration>
 							<overWriteSnapshots>true</overWriteSnapshots>
 							<overWriteReleases>true</overWriteReleases>
-							<outputDirectory>${frame.home}/jetty/webapps/</outputDirectory>
+							<outputDirectory>${frame.home}/jetty/webapps/rest-service</outputDirectory>
 							<includeArtifactIds>rest-service</includeArtifactIds>
 							<type>war</type>
 						</configuration>
