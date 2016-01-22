@@ -89,11 +89,11 @@
 			<version>${atmosphere-runtime}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.atmosphere</groupId>
-			<artifactId>atmosphere-spring</artifactId>
-			<version>${atmosphere.version}</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.atmosphere</groupId>-->
+			<!--<artifactId>atmosphere-spring</artifactId>-->
+			<!--<version>2.3.0</version>-->
+		<!--</dependency>-->
 
 		<!-- Jackson -->
 		<dependency>
