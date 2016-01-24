@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="styles/kendo.default.min.css" />
+    <link rel="stylesheet" href="styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="styles/kendo.material.min.css" />
+    <link rel="stylesheet" href="styles/examples-offline.css" />
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/kendo.all.min.js"></script>
+    <script src="js/console.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function() {
+            var count = 0;
+            $("#sendNotification").click(function(){
+                  //get text from text area
+                var text = $('textarea#texteditor').val();                
+                kendoConsole.log("send " + count++ +"::" + text);
+            });
+            
+            $("#clearEditor").click(function(){
+                 $('textarea#texteditor').val('');  
+            });
+
+            $("#clearAllNotification").click(function(){
+                kendoConsole.clear();
+            });
+        });
+    </script>
+
+    <div class="box">                
+        <div style="margin-bottom: 10px;"><strong>Console Notification</strong  ></div>
+        <div class="console"></div>
+        <div style="margin-bottom: 10px; margin-top: 10px"><strong>Notification Editor</strong  ></div>
+        <div>
+            <textarea class="editor" id="texteditor">
+            </textarea>
+            <p>
+                <button id="sendNotification" class="k-button k-primary">Send</button> &nbsp; &nbsp;
+                <button id="clearEditor" class="k-button">Clear Editor</button> &nbsp; &nbsp;
+                <button id="clearAllNotification" class="k-button">Clear ALL Notification</button>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

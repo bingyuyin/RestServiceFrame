@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.suiyu.lab</groupId>
+	<artifactId>comet-service</artifactId>
+	<version>1.00.00-SNAPSHOT</version>
+	<name>Comet Service</name>
+	<packaging>war</packaging>
+
+	<parent>
+		<groupId>com.suiyu.lab</groupId>
+		<artifactId>common-libs</artifactId>
+		<version>1.00.00-SNAPSHOT</version>
+		<relativePath>../integration-libs/common-libs</relativePath>
+	</parent>
+
+	<dependencies>
+		<!-- STACKS! -->
+		<dependency>
+			<groupId>com.suiyu.lab</groupId>
+			<artifactId>dependencies-spring</artifactId>
+			<version>${version}</version>
+			<type>pom</type>
+			<exclusions>
+				<exclusion>
+					<groupId>org.atmosphere</groupId>
+					<artifactId>atmosphere-jquery</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.suiyu.lab</groupId>
+			<artifactId>dependencies-base</artifactId>
+			<version>${version}</version>
+			<type>pom</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>comet-service</finalName>
+	</build>
+
+	
+</project>

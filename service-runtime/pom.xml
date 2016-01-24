@@ -8,9 +8,9 @@
 
 	<parent>
 		<groupId>com.suiyu.lab</groupId>
-		<artifactId>parent-of-parents</artifactId>
+		<artifactId>common-libs</artifactId>
 		<version>1.00.00-SNAPSHOT</version>
-		<relativePath>../common/parent-of-parents</relativePath>
+		<relativePath>../integration-libs/common-libs</relativePath>
 	</parent>
 
 
