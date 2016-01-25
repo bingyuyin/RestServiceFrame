@@ -4,7 +4,7 @@
 
 	<display-name>Spring Web MVC Application - Rest Service</display-name>
 
-	<!-- SPRING MVC Servlet -->
+	<!-- Spring MVC Servlet -->
 	<servlet>
 		<servlet-name>mvc-dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -40,6 +40,11 @@
 			</param-value>
 		</init-param>
 		<!-- Spring MVC Servlet Configuration: Tail -->
+
+		<init-param>
+			<param-name>org.atmosphere.cpr.AtmosphereFramework.analytics</param-name>
+			<param-value>false</param-value>
+		</init-param>
 
 		<init-param>
 			<param-name>org.atmosphere.cpr.AtmosphereInterceptor</param-name>
@@ -87,5 +92,11 @@
 			/WEB-INF/mvc-dispatcher-servlet.xml
 		</param-value>
 	</context-param>
+
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
 
 </web-app>
