@@ -21,6 +21,26 @@
 		<servlet-name>atmosphere-servlet</servlet-name>
 		<servlet-class>org.atmosphere.cpr.MeteorServlet</servlet-class>
 
+		<!-- Spring MVC Servlet Configuration: Head -->
+		<init-param>
+			<param-name>org.atmosphere.servlet</param-name>
+			<param-value>org.springframework.web.servlet.DispatcherServlet</param-value>
+		</init-param>
+		<init-param>
+			<param-name>contextClass</param-name>
+			<param-value>
+				org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>
+				classpath:applicationContext.xml
+				/WEB-INF/mvc-dispatcher-servlet.xml
+			</param-value>
+		</init-param>
+		<!-- Spring MVC Servlet Configuration: Tail -->
+
 		<init-param>
 			<param-name>org.atmosphere.cpr.AtmosphereInterceptor</param-name>
 			<param-value>org.atmosphere.interceptor.HeartbeatInterceptor</param-value>
@@ -60,11 +80,12 @@
 		<url-pattern>/ws/*</url-pattern>
 	</servlet-mapping>
 
-	<!--<context-param>-->
-		<!--<param-name>contextConfigLocation</param-name>-->
-		<!--<param-value>-->
-			<!--classpath:applicationContext.xml-->
-		<!--</param-value>-->
-	<!--</context-param>-->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath:applicationContext.xml
+			/WEB-INF/mvc-dispatcher-servlet.xml
+		</param-value>
+	</context-param>
 
 </web-app>

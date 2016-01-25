@@ -8,10 +8,7 @@
 
 	<modules>
 		<module>integration-libs</module>
-		<module>comet-service</module>
-		<module>rest-service</module>
-		<module>ws-service</module>
-		<module>service-packager</module>
+		<module>comet</module>
 		<module>service-runtime</module>
 	</modules>
 </project>

@@ -18,31 +18,32 @@ import javax.servlet.http.HttpServletRequest;
 public class WebSocketControllerImpl implements WebSocketController {
     @Autowired
     private WebSocketService webSocketService;
+
     @Override
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public void subscribe(HttpServletRequest request) throws Exception {
-
+        webSocketService.subscribe(request);
     }
 
     @Override
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public void broadcastMessage(HttpServletRequest request) throws Exception {
-
+        webSocketService.broadcastMessage(request);
     }
 
     @Override
     @RequestMapping(value = "{clientId:\\d+}", method = RequestMethod.GET)
     @ResponseBody
     public void subscribeClient(HttpServletRequest request) {
-
+        webSocketService.subscribe(request);
     }
 
     @Override
     @RequestMapping(value = "{clientId:\\d+}", method = RequestMethod.POST)
     @ResponseBody
     public void broadcastClientMessage(HttpServletRequest request) {
-
+        webSocketService.broadcastMessage(request);
     }
 }

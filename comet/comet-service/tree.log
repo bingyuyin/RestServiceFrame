@@ -1,0 +1,62 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.suiyu.lab:comet-service:war:1.00.00-SNAPSHOT
+[WARNING] The expression ${version} is deprecated. Please use ${project.version} instead.
+[WARNING] The expression ${version} is deprecated. Please use ${project.version} instead.
+[WARNING] The expression ${version} is deprecated. Please use ${project.version} instead.
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Comet Service 1.00.00-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.1:tree (default-cli) @ comet-service ---
+[INFO] com.suiyu.lab:comet-service:war:1.00.00-SNAPSHOT
+[INFO] +- com.suiyu.lab:dependencies-spring:pom:1.00.00-SNAPSHOT:compile
+[INFO] |  +- org.springframework:spring-core:jar:4.1.6.RELEASE:compile
+[INFO] |  |  \- commons-logging:commons-logging:jar:1.2:compile
+[INFO] |  +- org.springframework:spring-context:jar:4.1.6.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-beans:jar:4.1.6.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-expression:jar:4.1.6.RELEASE:compile
+[INFO] |  +- org.springframework:spring-web:jar:4.1.6.RELEASE:compile
+[INFO] |  +- org.springframework:spring-aop:jar:4.1.6.RELEASE:compile
+[INFO] |  |  \- aopalliance:aopalliance:jar:1.0:compile
+[INFO] |  +- org.springframework:spring-aspects:jar:4.1.6.RELEASE:compile
+[INFO] |  |  \- org.aspectj:aspectjweaver:jar:1.8.5:compile
+[INFO] |  +- org.springframework:spring-webmvc:jar:4.1.6.RELEASE:compile
+[INFO] |  +- javax.servlet:servlet-api:jar:2.5:compile
+[INFO] |  +- javax.servlet:jstl:jar:1.1.2:compile
+[INFO] |  +- com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:jar:2.4.4:compile
+[INFO] |  |  \- com.fasterxml.jackson.core:jackson-core:jar:2.4.4:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.4.4:compile
+[INFO] |  \- com.fasterxml.jackson.core:jackson-databind:jar:2.4.4:compile
+[INFO] +- com.suiyu.lab:dependencies-atmosphere:pom:1.00.00-SNAPSHOT:compile
+[INFO] |  +- org.atmosphere:atmosphere-jersey:jar:2.3.2:compile
+[INFO] |  |  +- org.atmosphere:atmosphere-annotations:jar:2.3.2:compile
+[INFO] |  |  +- com.sun.jersey:jersey-server:jar:1.19:compile
+[INFO] |  |  |  \- com.sun.jersey:jersey-core:jar:1.19:compile
+[INFO] |  |  |     \- javax.ws.rs:jsr311-api:jar:1.1.1:compile
+[INFO] |  |  \- com.sun.jersey:jersey-servlet:jar:1.19:compile
+[INFO] |  \- org.atmosphere:atmosphere-runtime:jar:2.3.2:compile
+[INFO] \- com.suiyu.lab:dependencies-base:pom:1.00.00-SNAPSHOT:compile
+[INFO]    +- org.apache.httpcomponents:httpmime:jar:4.0.3:compile
+[INFO]    |  +- org.apache.httpcomponents:httpcore:jar:4.0.1:compile
+[INFO]    |  +- org.apache.httpcomponents:httpclient:jar:4.0.3:compile
+[INFO]    |  |  \- commons-codec:commons-codec:jar:1.3:compile
+[INFO]    |  \- org.apache.james:apache-mime4j:jar:0.6:compile
+[INFO]    +- com.google.code.gson:gson:jar:2.2.2:compile
+[INFO]    +- org.slf4j:slf4j-api:jar:1.7.2:compile
+[INFO]    +- ch.qos.logback:logback-classic:jar:1.0.12:compile
+[INFO]    +- ch.qos.logback:logback-core:jar:1.0.12:compile
+[INFO]    \- commons-io:commons-io:jar:2.4:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.967s
+[INFO] Finished at: Mon Jan 25 10:13:44 CST 2016
+[INFO] Final Memory: 9M/234M
+[INFO] ------------------------------------------------------------------------

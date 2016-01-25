@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.suiyu.lab</groupId>
-	<artifactId>packager</artifactId>
+	<artifactId>comet-packager</artifactId>
 	<version>1.00.00-SNAPSHOT</version>
 	<name>Packager</name>
 	<packaging>pom</packaging>
@@ -11,12 +11,6 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>rest-service</artifactId>
-			<version>${project.version}</version>
-			<type>war</type>
-		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>comet-service</artifactId>
@@ -43,21 +37,6 @@
 							<overWriteReleases>true</overWriteReleases>
 							<outputDirectory>${frame.home}/jetty/webapps/comet-service</outputDirectory>
 							<includeArtifactIds>comet-service</includeArtifactIds>
-							<type>war</type>
-						</configuration>
-					</execution>
-
-					<execution>
-						<id>unpack-rest-service</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>unpack-dependencies</goal>
-						</goals>
-						<configuration>
-							<overWriteSnapshots>true</overWriteSnapshots>
-							<overWriteReleases>true</overWriteReleases>
-							<outputDirectory>${frame.home}/jetty/webapps/rest-service</outputDirectory>
-							<includeArtifactIds>rest-service</includeArtifactIds>
 							<type>war</type>
 						</configuration>
 					</execution>
