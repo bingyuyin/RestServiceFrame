@@ -4,6 +4,8 @@ import com.suiyu.web.common.JsonUtils;
 import com.suiyu.web.service.WebSocketService;
 import org.atmosphere.cpr.*;
 import org.atmosphere.util.ServletContextFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -17,6 +19,8 @@ import java.io.IOException;
 @Service
 public class WebSocketServiceImpl implements WebSocketService {
 
+    private static final Logger logger = LoggerFactory.getLogger(WebSocketServiceImpl.class);
+
     private BroadcasterFactory  broadcasterFactory = null;
 
     private Broadcaster globalBroadcaster = null;
@@ -24,6 +28,7 @@ public class WebSocketServiceImpl implements WebSocketService {
     @Override
     public void subscribe(HttpServletRequest request) {
         AtmosphereResource atmosphereResource = (AtmosphereResource)request.getAttribute(FrameworkConfig.ATMOSPHERE_RESOURCE);
+        logger.info("Incoming the client:" + atmosphereResource.uuid());
         if ( broadcasterFactory == null ) {
             broadcasterFactory = atmosphereResource.getAtmosphereConfig().getBroadcasterFactory();
             globalBroadcaster = broadcasterFactory.get("global");
