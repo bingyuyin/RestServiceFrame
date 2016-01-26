@@ -17,19 +17,18 @@ import java.io.IOException;
 @Service
 public class WebSocketServiceImpl implements WebSocketService {
 
-//    private BroadcasterFactory  broadcasterFactory ;
-//
-//    private Broadcaster globalBroadcaster;
+    private BroadcasterFactory  broadcasterFactory = null;
 
-    @PostConstruct
-    public void init() {
-//        globalBroadcaster = broadcasterFactory.get("global");
-    }
+    private Broadcaster globalBroadcaster = null;
 
     @Override
     public void subscribe(HttpServletRequest request) {
         AtmosphereResource atmosphereResource = (AtmosphereResource)request.getAttribute(FrameworkConfig.ATMOSPHERE_RESOURCE);
-  //      globalBroadcaster.addAtmosphereResource(atmosphereResource);
+        if ( broadcasterFactory == null ) {
+            broadcasterFactory = atmosphereResource.getAtmosphereConfig().getBroadcasterFactory();
+            globalBroadcaster = broadcasterFactory.get("global");
+        }
+        globalBroadcaster.addAtmosphereResource(atmosphereResource);
     }
 
     @Override
@@ -38,7 +37,7 @@ public class WebSocketServiceImpl implements WebSocketService {
         AtmosphereRequest req = atmosphereResource.getRequest();
         try {
             String message = JsonUtils.readJson(req.getReader());
-    //        globalBroadcaster.broadcast(message);
+            globalBroadcaster.broadcast("service:" + message);
         } catch (IOException ioe){
             // exception
         }

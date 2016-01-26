@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/test/")
 public class TestController {
+    // this controller is only used to test the framework work or not
     @RequestMapping(value = "get", method = RequestMethod.GET)
     ResponseEntity<Object> getTest(){
-        return new ResponseEntity<Object>("This is a response of get request", HttpStatus.OK);
+        return new ResponseEntity<Object>("This is a response of GET request", HttpStatus.OK);
     }
 }
