@@ -19,12 +19,19 @@
 		<logback.version>1.0.12</logback.version>
 		<commons-io.version>2.4</commons-io.version>
 		<jackson.version>2.4.4</jackson.version>
+		<jetty.version>9.2.10.v20150310</jetty.version>
+		<spring-data-jpa.version>1.3.0.RELEASE</spring-data-jpa.version>
+		<h2.version>1.3.171</h2.version>
+		<hibernate.jpa.version>1.0.1.Final</hibernate.jpa.version>
+		<hibernate.version>3.6.8.Final</hibernate.version>
+		<ehcache.version>2.2.0</ehcache.version>
+		<jodatime.version>2.1</jodatime.version>
+		<joda.hibernate.version>1.3</joda.hibernate.version>
+
 		<!--  -->
 		<console.relative.home>service-frame</console.relative.home>
 		<jetty.relative.home>jetty</jetty.relative.home>
 		<relative.warlocation>${jetty.relative.home}/webapps</relative.warlocation>
-
-		<jetty.version>9.2.10.v20150310</jetty.version>
 	</properties>
 	
 </project>
