@@ -3,5 +3,4 @@
 
     <persistence-unit name="myPersistentUnit"/>
 
-
 </persistence>
