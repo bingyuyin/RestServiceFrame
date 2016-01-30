@@ -7,9 +7,12 @@ import java.io.IOException;
 /**
  * Created by yinbing on 1/25/2016.
  */
-public class JsonUtils {
+public final class JsonUtils {
     private static final Gson gson = new Gson();
 
+    private JsonUtils(){
+
+    }
     public static String readJson(BufferedReader reader) {
         if (reader == null) {
             return null;
