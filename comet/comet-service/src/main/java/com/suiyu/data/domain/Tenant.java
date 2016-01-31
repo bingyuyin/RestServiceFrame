@@ -1,4 +1,4 @@
-package com.suiyu.db.domain;
+package com.suiyu.data.domain;
 
 import com.suiyu.web.common.TenantDetails;
 import com.suiyu.web.common.util.ThrowUtil;

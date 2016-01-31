@@ -1,6 +1,6 @@
-package com.suiyu.db.repository;
+package com.suiyu.data.repository;
 
-import com.suiyu.db.domain.Customer;
+import com.suiyu.data.domain.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

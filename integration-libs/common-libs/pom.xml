@@ -27,6 +27,7 @@
 		<ehcache.version>2.2.0</ehcache.version>
 		<jodatime.version>2.1</jodatime.version>
 		<joda.hibernate.version>1.3</joda.hibernate.version>
+		<postgresql.service.version>9.3-1100-jdbc41</postgresql.service.version>
 
 		<!--  -->
 		<console.relative.home>service-frame</console.relative.home>

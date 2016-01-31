@@ -9,4 +9,17 @@
 	</formats>
 	<includeBaseDirectory>false</includeBaseDirectory>
 
+	<fileSets>
+		<fileSet>
+			<outputDirectory>${console.relative.home}</outputDirectory>
+			<directory>src/main/resources/console-home</directory>
+			<includes>
+				<include>**</include>
+			</includes>
+			<filtered>true</filtered>
+			<!-- Temporary Fix: force all files to executable -->
+			<fileMode>755</fileMode>
+	</fileSet>
+	</fileSets>
+
 </assembly>

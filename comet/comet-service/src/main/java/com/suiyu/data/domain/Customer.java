@@ -1,4 +1,4 @@
-package com.suiyu.db.domain;
+package com.suiyu.data.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.suiyu.web.common.CustomerDetails;
