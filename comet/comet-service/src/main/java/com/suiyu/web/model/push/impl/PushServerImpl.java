@@ -43,6 +43,11 @@ public class PushServerImpl implements PushServer {
 
     }
 
+    @Override
+    public void unsubscribe(String pushClientId){
+        clients.remove(pushClientId);
+    }
+
     private boolean exist(String clientId){
         return clients.containsKey(clientId);
     }

@@ -5,6 +5,8 @@ import com.suiyu.web.model.push.PushMessageFactory;
 import com.suiyu.web.service.PushMessageService;
 import org.atmosphere.cpr.AtmosphereResource;
 
+import java.io.IOException;
+
 /**
  * Created by BingyuYin on 2016/2/22.
  */
@@ -14,6 +16,7 @@ public class AtmosphereResourceChannel extends AbstractPushClientChannel {
     private PushMessageFactory pushMessageFactory;
 
     public AtmosphereResourceChannel(AtmosphereResource resource, PushMessageService pushMessageService, PushMessageFactory pushMessageFactory){
+        super(resource.uuid());
         this.client = resource;
         this.pushMessageFactory = pushMessageFactory;
         this.pushMessageService  = pushMessageService;
@@ -34,5 +37,17 @@ public class AtmosphereResourceChannel extends AbstractPushClientChannel {
         }
         pushMessageService.onOutgoingMessage(pushMessage);
         send(pushMessageFactory.convertToJson(pushMessage).toString());
+    }
+
+    @Override
+    public void disconnect() {
+        if(client != null){
+            try{
+                client.close();
+            }catch(IOException ioe){
+                ioe.printStackTrace();
+            }
+        }
+        client = null;
     }
 }

@@ -28,7 +28,8 @@
 		<jodatime.version>2.1</jodatime.version>
 		<joda.hibernate.version>1.3</joda.hibernate.version>
 		<postgresql.service.version>9.3-1100-jdbc41</postgresql.service.version>
-
+		<jetty.version>9.2.10.v20150310</jetty.version>
+		<javax.version>2.0-m01</javax.version>
 		<!--  -->
 		<console.relative.home>service-frame</console.relative.home>
 		<jetty.relative.home>jetty</jetty.relative.home>

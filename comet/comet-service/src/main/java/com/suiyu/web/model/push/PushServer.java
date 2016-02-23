@@ -8,4 +8,6 @@ import org.atmosphere.cpr.AtmosphereResource;
 public interface PushServer {
     void subscribe(AtmosphereResource atmosphereResource, String pushClientId);
     void notifyMessage(PushMessage pushMessage);
+    void unsubscribe(String pushClientId);
+
 }
