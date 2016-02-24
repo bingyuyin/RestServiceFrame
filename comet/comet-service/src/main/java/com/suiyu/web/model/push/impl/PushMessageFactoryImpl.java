@@ -14,4 +14,9 @@ public class PushMessageFactoryImpl implements PushMessageFactory {
     public JsonObject convertToJson(PushMessage pushMessage) {
         return null;
     }
+
+    @Override
+    public PushMessage createFromJsonString(String json) {
+        return null;
+    }
 }

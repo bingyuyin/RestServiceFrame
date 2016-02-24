@@ -7,4 +7,5 @@ import com.google.gson.JsonObject;
  */
 public interface PushMessageFactory {
     JsonObject convertToJson(PushMessage pushMessage);
+    PushMessage createFromJsonString(String json);
 }
