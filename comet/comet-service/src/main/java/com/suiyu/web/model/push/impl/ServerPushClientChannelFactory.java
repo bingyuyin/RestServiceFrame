@@ -36,6 +36,9 @@ public class ServerPushClientChannelFactory extends AbstractPushClientChannelFac
     }
 
     private AbstractWebSocketChannel createWebSocketChannel(URI uri, String clientId){
+        if(uri == null){
+            return null;
+        }
         return new ServerWebSocketChannel(handler, pushMessageService, pushMessageFactory, uri, clientId, pushServer, getProxyHost(), useJetty);
     }
 
