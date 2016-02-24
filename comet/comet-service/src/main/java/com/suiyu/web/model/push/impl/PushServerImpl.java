@@ -8,6 +8,7 @@ import org.atmosphere.cpr.AtmosphereResource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.net.URI;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -34,8 +35,21 @@ public class PushServerImpl implements PushServer {
         if(exist(pushClientId)){
             return ;
         }
-        PushClient pushClient = pushClientFactory.createPushClient(atmosphereResource, pushClientId);
-        clients.put(pushClientId, pushClient);
+        PushClient pushClient = pushClientFactory.create(atmosphereResource, pushClientId);
+        if(pushClient != null){
+            clients.put(pushClientId, pushClient);
+        }
+    }
+
+    @Override
+    public void subscribe(URI uri, String host, String pushClientId) {
+        if(exist(pushClientId)){
+            return ;
+        }
+        PushClient pushClient = pushClientFactory.create(uri, host, pushClientId);
+        if(pushClient != null) {
+            clients.put(pushClientId, pushClient);
+        }
     }
 
     @Override

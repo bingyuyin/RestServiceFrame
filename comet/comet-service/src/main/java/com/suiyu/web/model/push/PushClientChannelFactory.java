@@ -10,5 +10,4 @@ import java.net.URI;
 public interface PushClientChannelFactory {
     PushClientChannel create(AtmosphereResource resource, String clientId);
     PushClientChannel create(URI uri, String clientId);
-    PushClientChannel create(String host, String clientId);
 }

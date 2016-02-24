@@ -1,29 +1,24 @@
 package com.suiyu.web.model.push.impl;
 
-import com.suiyu.web.model.push.PushClientChannel;
-import com.suiyu.web.model.push.PushClientChannelFactory;
-import com.suiyu.web.model.push.PushMessageFactory;
-import com.suiyu.web.model.push.PushServer;
+import com.suiyu.web.model.push.*;
 import com.suiyu.web.service.PushMessageService;
 import org.atmosphere.cpr.AtmosphereResource;
 import org.atmosphere.cpr.AtmosphereResourceEvent;
 import org.atmosphere.websocket.WebSocketEventListenerAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 /**
  * Created by BingyuYin on 2016/2/21.
  */
-@Component
 public abstract class AbstractPushClientChannelFactory implements PushClientChannelFactory {
     @Autowired
-    private PushServer pushServer;
+    protected PushServer pushServer;
 
     @Autowired
-    private PushMessageService pushMessageService;
+    protected PushMessageService pushMessageService;
 
     @Autowired
-    private PushMessageFactory pushMessageFactory;
+    protected PushMessageFactory pushMessageFactory;
 
     @Override
     public PushClientChannel create(AtmosphereResource resource, String clientId) {
