@@ -1,6 +1,9 @@
 package com.suiyu.web.common;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 
@@ -31,5 +34,17 @@ public final class JsonUtils {
         }
         return sb.toString().trim();
 
+    }
+
+    public static JsonObject convertStringToJsonObject(String json){
+        if(json == null){
+            return null;
+        }
+        try {
+            JsonParser jsonParser = new JsonParser();
+            return (JsonObject) jsonParser.parse(json);
+        }catch(Exception e){
+            return null;
+        }
     }
 }

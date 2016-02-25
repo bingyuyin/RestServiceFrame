@@ -4,6 +4,7 @@ import com.suiyu.web.common.JsonUtils;
 import com.suiyu.web.model.push.MessageHandler;
 import com.suiyu.web.model.push.PushMessage;
 import com.suiyu.web.model.push.PushMessageFactory;
+import com.suiyu.web.model.push.PushMessageType;
 import org.atmosphere.cpr.AtmosphereResource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -38,6 +39,16 @@ public class ServerMessageHandlerImpl implements MessageHandler {
     }
     @Override
     public void handleMessage(PushMessage pushMessage, String clientId) {
+        if(pushMessage != null){
+            PushMessageType messageType = pushMessage.getType();
+            if(messageType == PushMessageType.NOTIFICATION){
+
+            }else if(messageType == PushMessageType.REQUEST) {
+
+            }else if(messageType == PushMessageType.RESPONSE){
+
+            }
+        }
 
     }
 
