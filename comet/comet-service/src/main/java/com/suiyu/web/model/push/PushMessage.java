@@ -5,9 +5,16 @@ package com.suiyu.web.model.push;
  */
 public class PushMessage {
     private PushMessageType type;
-    private Object object;
+    private Object body;
     private String targetId;
     private String sourceId;
+
+    public PushMessage(String targetId, String sourceId, Object body, PushMessageType type){
+        this.targetId = targetId;
+        this.sourceId = sourceId;
+        this.body = body;
+        this.type = type;
+    }
 
     public PushMessageType getType() {
         return type;
@@ -15,14 +22,6 @@ public class PushMessage {
 
     public void setType(PushMessageType type) {
         this.type = type;
-    }
-
-    public Object getObject() {
-        return object;
-    }
-
-    public void setObject(Object object) {
-        this.object = object;
     }
 
     public String getTargetId() {
@@ -39,6 +38,14 @@ public class PushMessage {
 
     public void setSourceId(String sourceId) {
         this.sourceId = sourceId;
+    }
+
+    public Object getBody() {
+        return body;
+    }
+
+    public void setBody(Object body) {
+        this.body = body;
     }
 
     @Override
