@@ -1,13 +1,15 @@
 <snippet>
-  <content><![CDATA[
-# ${1:Service Frame}
+  <content>
+# Service Frame
 
 A simple service frame for web service and web socket communication with database infrastructure
 
 Technical stacks: Spring MVC + Atmosphere Framework
 
-Http Service: Jetty
+Http Server: Jetty
+
 Database: postgres
+
 Project Management: Maven
 
 ## Installation
@@ -19,6 +21,6 @@ Project Management: Maven
 
 Run the script 'start-jetty.bat' in the target folder
 
-]]></content>
+</content>
   <tabTrigger>readme</tabTrigger>
 </snippet>
