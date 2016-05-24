@@ -42,6 +42,12 @@ public class PushClientFactoryImpl implements PushClientFactory{
 
     @Override
     public PushClient create(String host, String clientId) {
+        if (pushClientChannelFactory != null) {
+            PushClientChannel channel = pushClientChannelFactory.create(host, clientId);
+            if (channel != null) {
+                return new PushClientImpl(channel, clientId);
+            }
+        }
         return null;
     }
 }
