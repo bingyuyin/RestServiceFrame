@@ -1,12 +1,15 @@
 package com.suiyu.web.model.push.impl;
 
+import com.rabbitmq.client.Connection;
 import com.suiyu.web.model.push.MessageHandler;
 import com.suiyu.web.model.push.PushClientChannel;
 import com.suiyu.web.model.push.PushMessageFactory;
-import com.suiyu.web.service.PushMessageService;
+import com.suiyu.web.model.push.impl.mq.TopicConsumer;
+import com.suiyu.web.model.push.impl.mq.TopicProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.net.URI;
 
 /**
@@ -17,6 +20,10 @@ public class ServerPushClientChannelFactory extends AbstractPushClientChannelFac
 
     @Autowired
     private MessageHandler handler;
+
+    @Autowired
+    private PushMessageFactory pushMessageFactory;
+
 
     private String proxyHost = "";
 
@@ -31,6 +38,30 @@ public class ServerPushClientChannelFactory extends AbstractPushClientChannelFac
             }else{
                 channel.disconnect();
             }
+        }
+        return null;
+    }
+
+
+    @Override
+    public PushClientChannel create(String host, String clientId) {
+        try {
+            Connection connection = newMessageQueueConnection(host);
+            TopicConsumer topicConsumer = new TopicConsumer(connection.createChannel(),
+                    topicExchangeName,
+                    clientId +".incoming",
+                    handler);
+            TopicProducer topicProducer = new TopicProducer(connection.createChannel(),
+                    topicExchangeName,
+                    clientId +".outgoing");
+
+            return new MessageQueueChannel(connection,
+                    topicProducer,
+                    topicConsumer,
+                    clientId,
+                    pushMessageFactory);
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
         }
         return null;
     }

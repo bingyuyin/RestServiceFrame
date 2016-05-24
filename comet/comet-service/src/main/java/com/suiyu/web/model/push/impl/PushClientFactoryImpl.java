@@ -39,4 +39,9 @@ public class PushClientFactoryImpl implements PushClientFactory{
         }
         return null;
     }
+
+    @Override
+    public PushClient create(String host, String clientId) {
+        return null;
+    }
 }
