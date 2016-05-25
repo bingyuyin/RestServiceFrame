@@ -1,7 +1,7 @@
 package com.suiyu.data.domain;
 
-import com.suiyu.web.common.TenantDetails;
-import com.suiyu.web.common.util.ThrowUtil;
+import com.suiyu.comet.common.TenantDetails;
+import com.suiyu.comet.common.util.ThrowUtil;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.jpa.domain.AbstractPersistable;

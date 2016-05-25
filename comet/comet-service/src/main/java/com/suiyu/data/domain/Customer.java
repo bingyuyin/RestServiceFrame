@@ -1,9 +1,9 @@
 package com.suiyu.data.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.suiyu.web.common.CustomerDetails;
-import com.suiyu.web.common.CustomerShowDetails;
-import com.suiyu.web.common.util.ThrowUtil;
+import com.suiyu.comet.common.CustomerDetails;
+import com.suiyu.comet.common.CustomerShowDetails;
+import com.suiyu.comet.common.util.ThrowUtil;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.Fetch;
