@@ -8,12 +8,21 @@ public class PushMessage {
     private Object body;
     private String targetId;
     private String sourceId;
+    private String originalId;
 
     public PushMessage(String targetId, String sourceId, Object body, PushMessageType type){
         this.targetId = targetId;
         this.sourceId = sourceId;
         this.body = body;
         this.type = type;
+    }
+
+    public String getOriginalId() {
+        return this.originalId;
+    }
+
+    public void setOriginalId(String originalId) {
+        this.originalId = originalId;
     }
 
     public PushMessageType getType() {
